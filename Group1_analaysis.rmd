@@ -1,1 +1,14 @@
 RMD file for Group 1 Analysis
+
+```{r}
+
+#| label: role 1
+
+pacman::p_load(tidyverse,
+               dplyr,
+               ggplot2)
+            
+gtd <- read.csv("data/globalterrorismdb_0718dist.csv")
+head(gtd)
+
+```
