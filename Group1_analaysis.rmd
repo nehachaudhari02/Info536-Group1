@@ -1,1 +1,15 @@
 RMD file for Group 1 Analysis
+
+Loading the required libraries
+```{r}
+library(tidyverse)
+library(dplyr)
+```
+
+Loading the dataset
+
+```{r}
+gtd <- read_csv("globalterrorismdb_0718dist.csv")
+head(gtd)
+```
+
