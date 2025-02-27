@@ -1,5 +1,6 @@
 RMD file for Group 1 Analysis
 
+<<<<<<< HEAD
 Loading the required libraries
 ```{r}
 library(tidyverse)
@@ -13,3 +14,26 @@ gtd <- read_csv("globalterrorismdb_0718dist.csv")
 head(gtd)
 ```
 
+=======
+```{r}
+
+#| label: role 1
+
+pacman::p_load(tidyverse,
+               dplyr,
+               ggplot2)
+            
+gtd <- read.csv("globalterrorismdb_0718dist.csv")
+head(gtd)
+
+gtd_filter <- gtd |>
+  filter(!is.na(iyear))
+gtd_filter
+
+attacks_per_year <- gtd_filter |>
+  group_by(iyear) |>
+  summarise(total_attacks = n())
+attacks_per_year
+
+```
+>>>>>>> 91d2fb79679973ba7cd1b9c2d9c87b9eb4ac7616
