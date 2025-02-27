@@ -8,7 +8,7 @@ pacman::p_load(tidyverse,
                dplyr,
                ggplot2)
             
-gtd <- read.csv("data/globalterrorismdb_0718dist.csv")
+gtd <- read.csv("globalterrorismdb_0718dist.csv")
 head(gtd)
 
 gtd_filter <- gtd |>
