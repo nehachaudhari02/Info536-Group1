@@ -45,7 +45,7 @@ attacks_per_year
 ```
 
 
-```{r}
+```{r fig.height = 10}
 
 #| label: role 3
 
