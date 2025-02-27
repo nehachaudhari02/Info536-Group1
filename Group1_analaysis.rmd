@@ -11,4 +11,13 @@ pacman::p_load(tidyverse,
 gtd <- read.csv("data/globalterrorismdb_0718dist.csv")
 head(gtd)
 
+gtd_filter <- gtd |>
+  filter(!is.na(iyear))
+gtd_filter
+
+attacks_per_year <- gtd_filter |>
+  group_by(iyear) |>
+  summarise(total_attacks = n())
+attacks_per_year
+
 ```
