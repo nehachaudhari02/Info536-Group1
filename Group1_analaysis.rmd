@@ -1,5 +1,7 @@
 RMD file for Group 1 Analysis
 
+Members:Neha Chaudhari, Mushaer Ahmed, Tanya Evita George
+
 <<<<<<< HEAD
 Loading the required libraries
 ```{r}
