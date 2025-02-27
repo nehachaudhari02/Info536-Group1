@@ -30,6 +30,8 @@ gtd_filter <- gtd |>
   filter(!is.na(iyear))
 gtd_filter
 
+#| label: role 2
+
 attacks_per_year <- gtd_filter |>
   group_by(iyear) |>
   summarise(total_attacks = n())
@@ -37,3 +39,30 @@ attacks_per_year
 
 ```
 >>>>>>> 91d2fb79679973ba7cd1b9c2d9c87b9eb4ac7616
+
+```{r}
+attacks_per_year
+```
+
+
+```{r}
+
+#| label: role 3
+
+# Visualizing the number of attacks per year using a bar chart.
+
+attacks_barchart <- ggplot(attacks_per_year, aes(x = as.factor(iyear), y = total_attacks)) +
+geom_bar(stat = "identity", fill = "purple3") +
+  labs(title = "Bar chart showing number of Attacks per Year",
+       x = "Year",
+       y = "Number of Attacks") +
+  theme( axis.text.x = element_text(angle = 180, hjust = 1, vjust = 0.5)) +
+  theme_minimal()
+
+plot(attacks_barchart)
+```
+
+
+
+
+
