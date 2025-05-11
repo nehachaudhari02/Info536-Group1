@@ -1,0 +1,50 @@
+---
+RMD file for Group 1 Analysis
+Members:Neha Chaudhari, Mushaer Ahmed, Tanya Evita George
+date: "2025-05-11"
+---
+
+Loading the required libraries
+```{r}
+install.packages("tidyverse")
+install.packages("dplyr")
+library(tidyverse)
+library(dplyr)
+```
+
+Loading the dataset
+
+```{r}
+gtd <- read_csv("globalterrorismdb_0718dist.csv")
+head(gtd)
+```
+
+=======
+
+```{r}
+#| label: role 1
+
+pacman::p_load(tidyverse,
+               dplyr,
+               ggplot2)
+            
+gtd <- read.csv("globalterrorismdb_0718dist.csv")
+head(gtd)
+
+gtd_filter <- gtd |>
+  filter(!is.na(iyear))
+gtd_filter
+```
+
+
+```{r}
+#| label: role 2 (Mushaer Ahmed)
+
+attacks_per_year <- gtd_filter |>
+  group_by(iyear) |>
+  summarise(total_attacks = n())
+attacks_per_year
+
+```
+
+
